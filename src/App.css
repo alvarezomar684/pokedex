@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-image: url("https://lh3.googleusercontent.com/4I4XB51OZpQL-JuSUcd8yrchFvAXJrK405d6CtVX9hXOqAC4vFTeuwFACbVzPSCOEeRtMHlLqA33rvlcnGb3FPTSfOuusljfWH9sf1U45Aaq=e365-w1922");
+  background-repeat: repeat-y;  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;  
+}
+
+.btn-search {
+  background-image: url(./pokeball.ico);
+  background-repeat: no-repeat;
+  padding: 65px;
+  border-radius: 84px;
+  margin-left: 10px;
+  border: 2px solid white;
+}
+
+.btn-search:hover {  
+  border: 2px solid green;
+  transition: all 300ms;
+  
+}
+
+.status {
+  color: #DC3646;
+}
+
+.status span {
+  background-color: #DC3646;
+  border-radius: 10px;
+  min-width: 50px;
+  color: white;
+}
+
+.iconify {
+  font-size: 26rem;
+  color: #3eb1b5;  
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+}
+
+.render-type { 
+  
+  background: linear-gradient(to bottom, #3c9a2c, #3eb1b5); 
+  margin-right: 50px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  
+}
+
+.arrow {
+  color: green;
+}
