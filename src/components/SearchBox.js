@@ -4,7 +4,8 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
     const [searchName,setSearchName] = useState("")
     const [searchType,setSearchtype] = useState("")
     const [filter,setFilter] = useState("")
-    const [useFilter,setUseFilter] = useState(false)    
+    const [useFilter,setUseFilter] = useState(false)  
+    const [many,setMany] = useState("")  
 
     useEffect(() => {
         if(filter === "By Name"){
@@ -31,7 +32,9 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
                 <option value="" >select type pokemon</option>
                 {listAllType}
             </select> : null }
-            { !useFilter ? <button onClick={()=>{onSearchType(searchType)}} className="btn-search" ></button> : null }
+            { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search" ></button> : null }
+            { !useFilter ? <label style={{color:"#b33131",fontWeight:"bold",textShadow:"0px 2px 3px white"}} >Seleccione La Cantidad de Pokemones</label>: null }
+            { !useFilter ? <input className="choose-quantity" type="number" value={many} onChange={ e => setMany(e.target.value) } /> : null }
         </div>
     )
 }

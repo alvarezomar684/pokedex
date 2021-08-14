@@ -2,14 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 
-export const RenderPokemon = ({ url }) => {
+export const RenderPokemon = ({ url,quantity }) => {
     const [pokemon, setPokemon] = useState(null)
     const [types, setTypes] = useState([])
     const [status, setStatus] = useState([])
     const { path } = useRouteMatch()
 
     useEffect(() => {
-        if (url) {
+        if (url && quantity ) {
             const getAllType = async () => {
                 const res = await axios({
                     method: "GET",
@@ -19,7 +19,7 @@ export const RenderPokemon = ({ url }) => {
             }
             getAllType()
         }
-    }, [url])
+    }, [url,quantity])
 
     useEffect(() => {
         if (pokemon) {

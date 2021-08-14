@@ -17,16 +17,19 @@ export const Pokedex = () => {
     const [pokemonType, setPokemonType] = useState("")
     const [pokemonTypeCut, setPokemonTypeCut] = useState([])
     const [flag, setFlag] = useState(false)
+    const [quantity, setQuantity] = useState("")  
     const {path} = useRouteMatch()
+    
 
-    const handleSearchName = (e) => {        
+    const handleSearchName = (e,) => {        
         setName(e)
-        setType("")
+        setType("")          
     }
 
-    const handleSearchType = (e) => {
+    const handleSearchType = (e,m) => {
         setType(e)
         setName("")
+        setQuantity(m)   
     }
 
     useEffect(() => {
@@ -42,7 +45,7 @@ export const Pokedex = () => {
     }, [])
 
     useEffect(() => {
-        if (type) {
+        if (type && quantity) {
             const getType = async () => {
                 const res = await axios({
                     method: "GET",
@@ -53,16 +56,16 @@ export const Pokedex = () => {
             }
             getType()
         }
-    }, [type])
+    }, [type, quantity])
 
     useEffect(() => {
         if (pokemonType) {
-            pokemonType.splice(4, pokemonType.length)
+            pokemonType.splice(parseInt(quantity), pokemonType.length)
             setPokemonTypeCut(pokemonType)
         }
-    }, [pokemonType])
+    }, [pokemonType,quantity])
 
-    const listTypePokemon = pokemonTypeCut.map(e => <RenderPokemon key={e.pokemon.url} url={e.pokemon.url} />)
+    const listTypePokemon = pokemonTypeCut.map(e => <RenderPokemon key={e.pokemon.url} url={e.pokemon.url} quantity={quantity} />)
 
     useEffect(() => {
         if (type.trim() !== '') {
