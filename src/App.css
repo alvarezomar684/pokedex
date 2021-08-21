@@ -35,6 +35,7 @@ body {
 
 .status {
   color: #DC3646;
+  color: black;
 }
 
 .status span {
@@ -44,22 +45,32 @@ body {
   color: white;
 }
 
+.info-moreInfo {
+  background-color: #DC3646;
+  border-radius: 10px;  
+  min-width: auto;
+  padding: 20px;
+  color: white;
+}
+
 .iconify {
   font-size: 26rem;
   color: #3eb1b5; 
   
 }
 
-.render-type { 
-  
+.render-type {   
   background: linear-gradient(to bottom, #3c9a2c, #3eb1b5); 
   margin-right: 50px;
   margin-bottom: 50px;
-  border-radius: 5px;
-  
+  border-radius: 5px;  
 }
 
 .arrow {
   color: green;
+}
+
+.card-more-info {
+  background: linear-gradient(to bottom, #3c9a2c, #3eb1b5); 
 }
 

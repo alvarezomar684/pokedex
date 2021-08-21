@@ -40,7 +40,7 @@ export const RenderPokemon = ({ url, quantity }) => {
         }
     })
 
-    const listTypes = types.map(e => (<h4 key={e.type.url} className="text-capitalize" >{e.type.name}</h4>))
+    const listTypes = types.map(e => (<h4 key={e.type.url} className="text-capitalize text-white " >{e.type.name}</h4>))
     const listStatus = status.map(e => (<h4 key={e.stat.url} className="status text-capitalize" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}  > {e.stat.name}: <span> {e.base_stat} </span> </h4>))
 
     if (!pokemon) {
@@ -49,7 +49,7 @@ export const RenderPokemon = ({ url, quantity }) => {
 
     return (
         <div className=" col-12 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" >
-            <h4 className="text-uppercase text-center">{pokemon.name}</h4>
+            <h4 className="text-uppercase text-center" style={{color:"#DC3646", fontWeight:"bolder"}} >{pokemon.name}</h4>
             <Link to={`${path}/${pokemon.id}`} >
                 <div className="d-flex justify-content-center">
                     <img src={pokemon.sprites.front_default} alt={pokemon.name} />
