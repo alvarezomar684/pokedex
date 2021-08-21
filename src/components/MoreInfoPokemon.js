@@ -64,14 +64,14 @@ export const MoreInfoPokemon = () => {
     const listStatus = status.map(e => (<h4 key={e.stat.url} className="status text-capitalize" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}  > {e.stat.name}: <span> {e.base_stat} </span> </h4>))
     const listAbilities = ability.map(e => (    
         <h4 key={e.ability.url} className="info-moreInfo text-capitalize "  >            
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
             </svg>
             {e.ability.name} 
         </h4>))
     const listMoves = moves.map(e => (
         <h4 key={e.move.url} className="text-capitalize info-moreInfo" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
             </svg>
             {e.move.name}
@@ -91,10 +91,7 @@ export const MoreInfoPokemon = () => {
             setHoldAbT("#000000")
             setHoldMT("#FFFFFF")
         }
-    }, [useFilter])
-
-    console.log(holdAb)
-    console.log(holdM)
+    }, [useFilter])   
 
 
     if (!pokemonMore) {
@@ -132,11 +129,11 @@ export const MoreInfoPokemon = () => {
                     </div>
                     <div>
                         <nav>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
+                            <ul className="nav nav-tabs">
+                                <li className="nav-item">
                                     <button onClick={() => { setUseFilter(true) }} className="nav-link" style={{ backgroundColor: holdAb, color: holdAbT }} >ABOUT</button>
                                 </li>
-                                <li class="nav-item">
+                                <li className="nav-item">
                                     <button onClick={() => { setUseFilter(false) }} className="nav-link" style={{ backgroundColor: holdM, color: holdMT }}  >MOVES</button>
                                 </li>
                             </ul>
@@ -149,7 +146,7 @@ export const MoreInfoPokemon = () => {
                             <h4 style={{ color: "#DC3646" }} className="text-uppercase" >
                                 Height
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
+                                    <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
                                 </svg>
                             </h4>
                             <hr />
@@ -159,7 +156,7 @@ export const MoreInfoPokemon = () => {
                             <h4 style={{ color: "#DC3646" }} className="text-uppercase" >
                                 Weight
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
+                                    <path fillRule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
                                 </svg>
                             </h4>
                             <hr />
