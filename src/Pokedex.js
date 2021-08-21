@@ -17,19 +17,19 @@ export const Pokedex = () => {
     const [pokemonType, setPokemonType] = useState("")
     const [pokemonTypeCut, setPokemonTypeCut] = useState([])
     const [flag, setFlag] = useState(false)
-    const [quantity, setQuantity] = useState("")  
-    const {path} = useRouteMatch()
-    
+    const [quantity, setQuantity] = useState("")
+    const { path } = useRouteMatch()
 
-    const handleSearchName = (e,) => {        
+
+    const handleSearchName = (e,) => {
         setName(e)
-        setType("")          
+        setType("")
     }
 
-    const handleSearchType = (e,m) => {
+    const handleSearchType = (e, m) => {
         setType(e)
         setName("")
-        setQuantity(m)   
+        setQuantity(m)
     }
 
     useEffect(() => {
@@ -63,7 +63,7 @@ export const Pokedex = () => {
             pokemonType.splice(parseInt(quantity), pokemonType.length)
             setPokemonTypeCut(pokemonType)
         }
-    }, [pokemonType,quantity])
+    }, [pokemonType, quantity])
 
     const listTypePokemon = pokemonTypeCut.map(e => <RenderPokemon key={e.pokemon.url} url={e.pokemon.url} quantity={quantity} />)
 
@@ -76,35 +76,42 @@ export const Pokedex = () => {
 
     }, [type, name])
 
-    
+
+
+
 
     return (
-        <div className="App">            
-            <header className="App-header">  
-            <span className="iconify" data-icon="simple-icons:pokemon"></span>
-            <Switch>                
-                <Route path={`${path}/:id`} >                
-                    <MoreInfoPokemon/>                                                
-                </Route> 
-                <Route path={path}>
-                    <div className="container">
-                        <div className="row">
+        <div className="App">
+            <header className="App-header">
+                <div className="col-12  offset-sm-4 offset-md-6 offset-lg-5  offset-xl-4" >
+                    <span className="iconify " data-icon="simple-icons:pokemon"></span>
+                </div>
+
+                <Switch>
+                    <Route path={`${path}/:id`} >
+                        <MoreInfoPokemon />
+                    </Route>
+                    <Route path={path}>
+                        <div className="row ml-5">
                             {flag ? listTypePokemon : null}
                             {!flag ? <RenderPokemonName name={name} /> : null}
                         </div>
-                    </div>                     
-                    <SearchBox onSearchName={handleSearchName} onSearchType={handleSearchType} allType={allType} />                                     
-                </Route>               
-            </Switch>           
-            <Link to="/pokedex" >                
-                <div className="title-pokemon" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">
-                    <path fillRule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                    <path fillRule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                    </svg>
-                </div>                
-            </Link>                         
-            </header>
+                        <SearchBox onSearchName={handleSearchName} onSearchType={handleSearchType} allType={allType} />
+                    </Route>
+                </Switch>
+                <Link to="/pokedex" >
+                    <nav id="services" className="fixed-top navbar bg-dark">
+                        <ul className="nav nav-pills">
+                            <li className="nav-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                    <path fillRule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                </svg>
+                            </li>
+                        </ul>
+                    </nav>
+                </Link>                
+            </header>            
         </div>
     );
 

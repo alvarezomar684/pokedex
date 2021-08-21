@@ -1,10 +1,13 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
+body {
   background-image: url("https://lh3.googleusercontent.com/4I4XB51OZpQL-JuSUcd8yrchFvAXJrK405d6CtVX9hXOqAC4vFTeuwFACbVzPSCOEeRtMHlLqA33rvlcnGb3FPTSfOuusljfWH9sf1U45Aaq=e365-w1922");
   background-repeat: repeat-y;  
+}
+
+/* .App {
+  text-align: center;
+} */
+
+/* .App-header {  
   min-height: 100vh;
   display: flex;
   flex-direction: row;
@@ -13,7 +16,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;  
-}
+} */
 
 .btn-search {
   background-image: url(./pokeball.ico);
@@ -43,10 +46,8 @@
 
 .iconify {
   font-size: 26rem;
-  color: #3eb1b5;  
-  display: flex;
-  flex-direction: row;
-  flex-basis: 100%;
+  color: #3eb1b5; 
+  
 }
 
 .render-type { 
@@ -61,3 +62,4 @@
 .arrow {
   color: green;
 }
+

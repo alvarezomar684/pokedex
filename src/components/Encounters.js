@@ -7,7 +7,8 @@ export const Encounters = () => {
     const [url,setUrl] = useState("")
     const [allLocation,setAllLocation] = useState([])
     const [locations,setLocations] = useState([])
-    const [locationStatus,setLocationStatus] = useState(false)
+    const [locationStatus,setLocationStatus] = useState(null)
+    
 
     useEffect(() => {
         const getURL = async () => {

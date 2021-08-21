@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="container-fluid">
-        <div className="row" >
+        <div >
           <Switch>
             <Route path="/pokedex" >
               <Pokedex/>

@@ -2,14 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 
-export const RenderPokemon = ({ url,quantity }) => {
+export const RenderPokemon = ({ url, quantity }) => {
     const [pokemon, setPokemon] = useState(null)
     const [types, setTypes] = useState([])
     const [status, setStatus] = useState([])
     const { path } = useRouteMatch()
 
     useEffect(() => {
-        if (url && quantity ) {
+        if (url && quantity) {
             const getAllType = async () => {
                 const res = await axios({
                     method: "GET",
@@ -19,7 +19,7 @@ export const RenderPokemon = ({ url,quantity }) => {
             }
             getAllType()
         }
-    }, [url,quantity])
+    }, [url, quantity])
 
     useEffect(() => {
         if (pokemon) {
@@ -41,29 +41,34 @@ export const RenderPokemon = ({ url,quantity }) => {
     })
 
     const listTypes = types.map(e => (<h4 key={e.type.url} className="text-capitalize" >{e.type.name}</h4>))
-    const listStatus = status.map(e => (<h4 key={e.stat.url} className="status text-capitalize" style={{ display: "flex", flexDirection: "row", justifyContent:"space-between" }}  > {e.stat.name}: <span> {e.base_stat} </span> </h4>))
+    const listStatus = status.map(e => (<h4 key={e.stat.url} className="status text-capitalize" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}  > {e.stat.name}: <span> {e.base_stat} </span> </h4>))
 
     if (!pokemon) {
         return null
     }
 
     return (
-        <div className="col-md-3 render-type" >
-            <h4 className="text-uppercase">{pokemon.name}</h4>
+        <div className=" col-12 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" >
+            <h4 className="text-uppercase text-center">{pokemon.name}</h4>
             <Link to={`${path}/${pokemon.id}`} >
-                <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                <div className="d-flex justify-content-center">
+                    <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                </div>                
             </Link>
             <div className="d-flex flex-row justify-content-between" >
                 {listTypes}
-            </div>            
+            </div>
             {listStatus}
             <Link to={`${path}/${pokemon.id}`} >
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-file-plus" viewBox="0 0 16 16">
-                    <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z" />
-                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                </svg>
+                <div className="text-center mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-file-plus more-info" viewBox="0 0 16 16">
+                        <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z" />
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                    </svg>
+                </div>
             </Link>
             <br />
+
         </div>
     )
 }
