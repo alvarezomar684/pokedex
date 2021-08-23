@@ -18,23 +18,32 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
     const listAllType = allType.map( e => (<option key={e.name} value={e.name} >{e.name}</option>))    
 
     return (
-        <div>
-            <select onChange={ e => setFilter(e.target.value)} >
-                <option>Change Search</option>
-                <option>By Name</option>             
-                <option>By Type</option>
-            </select>
+        <div className="row d-flex flex-column justify-content-between" >
+            <div className="col-2 col-lg-6 d-flex flex-column justify-content-between flex-lg-row " style={{margin:"0 auto"}} >
+                <select className="form-control" onChange={ e => setFilter(e.target.value)} >
+                    <option>Change Search</option>
+                    <option>By Name</option>             
+                    <option>By Type</option>
+                </select>
+                
+                { useFilter ? <input className="form-control"  value={searchName} onChange={ e => setSearchName(e.target.value)} placeholder="Pokemon Name" /> : null}             
 
-            { useFilter ? <input value={searchName} onChange={ e => setSearchName(e.target.value)} placeholder="Pokemon Name" /> : null}
-            { useFilter ? <button onClick={()=>{onSearchName(searchName)}} className="btn-search" ></button> : null }
-
-            { !useFilter ? <select onChange={ e => setSearchtype(e.target.value)}>
-                <option value="" >select type pokemon</option>
-                {listAllType}
-            </select> : null }
-            { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search" ></button> : null }
-            { !useFilter ? <label style={{color:"#b33131",fontWeight:"bold",textShadow:"0px 2px 3px white"}} >Seleccione La Cantidad de Pokemones</label>: null }
-            { !useFilter ? <input className="choose-quantity" type="number" value={many} onChange={ e => setMany(e.target.value) } /> : null }
+                { !useFilter ? <select className="form-control" onChange={ e => setSearchtype(e.target.value)}>
+                    <option value="" >select type pokemon</option>
+                    {listAllType}
+                </select> : null }
+                
+                { !useFilter ? <input className="choose-quantity form-control" placeholder="Cantidad de Pokemones" type="number" value={many} onChange={ e => setMany(e.target.value) } /> : null }
+                {/* { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search" ></button> : null }                 */}
+            </div>
+            <div className="mt-5 row" >
+                    { useFilter ? <button onClick={()=>{onSearchName(searchName)}} className="btn-search col-6" style={{margin:"0 auto"}} ></button> : null }
+                </div>
+            <div className="mt-5 row" >
+                { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search col-6" style={{margin:"0 auto"}} ></button> : null }    
+            </div>
+             
         </div>
+        
     )
 }

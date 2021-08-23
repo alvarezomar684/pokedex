@@ -21,6 +21,7 @@ body {
 .btn-search {
   background-image: url(./pokeball.ico);
   background-repeat: no-repeat;
+  background-position: 291px ;
   padding: 65px;
   border-radius: 84px;
   margin-left: 10px;

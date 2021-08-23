@@ -75,18 +75,14 @@ export const Pokedex = () => {
         }
 
     }, [type, name])
-
-
-
-
+    //className="col-12  offset-sm-4 offset-md-6 offset-lg-5  offset-xl-4"
 
     return (
         <div className="App">
             <header className="App-header">
-                <div className="col-12  offset-sm-4 offset-md-6 offset-lg-5  offset-xl-4" >
-                    <span className="iconify " data-icon="simple-icons:pokemon"></span>
+                <div className="col-1 d-flex flex-column " style={{margin:"0 auto"}} >
+                    <span className="iconify " data-icon="simple-icons:pokemon" ></span>
                 </div>
-
                 <Switch>
                     <Route path={`${path}/:id`} >
                         <MoreInfoPokemon />
