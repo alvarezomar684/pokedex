@@ -74,8 +74,7 @@ export const Pokedex = () => {
             setFlag(false)
         }
 
-    }, [type, name])
-    //className="col-12  offset-sm-4 offset-md-6 offset-lg-5  offset-xl-4"
+    }, [type, name])    
 
     return (
         <div className="App">

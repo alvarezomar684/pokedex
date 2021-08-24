@@ -3,21 +3,6 @@ body {
   background-repeat: repeat-y;  
 }
 
-/* .App {
-  text-align: center;
-} */
-
-/* .App-header {  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;  
-} */
-
 .btn-search {
   background-image: url(./pokeball.ico);
   background-repeat: no-repeat;
