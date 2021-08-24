@@ -105,7 +105,7 @@ export const MoreInfoPokemon = () => {
                     <Encounters />
                 </Route>
                 <Route path={path} >
-                    <div className="d-flex flex-row justify-content-between jumbotron card-more-info" >
+                    <div className="d-flex flex-row justify-content-between jumbotron card-more-info" style={{marginTop:"7rem"}} >
                         <div>
                             <h4 className="text-uppercase display-4" style={{color:"#DC3646"}} >{pokemonMore.name}</h4>
                             <h4 className="display-4 text-white" ># {pokemonMore.order}</h4>

@@ -73,7 +73,7 @@ export const Encounters = () => {
 
     return (
         <>
-            <h4 className="text-uppercase display-3 text-center" style={{ color: "#DC3646", textShadow: "7px 10px 5px #DC3646", fontWeight: "bolder" }} >{pokemonMore.name}</h4>
+            <h4 className="text-uppercase display-3 text-center" style={{ marginTop:"7rem", color: "#DC3646", textShadow: "7px 10px 5px #DC3646", fontWeight: "bolder" }} >{pokemonMore.name}</h4>
             <img src={pokemonMore.sprites.other["official-artwork"].front_default} alt={pokemonMore.name} className="img-fluid rounded mx-auto d-block mt-3 " />
             <div className="col-12">
                 <h4 className="display-3 text-uppercase " style={{ color: "#DC3646", textShadow: "5px 7px 5px #DC3646", fontWeight: "bolder" }} >location</h4>

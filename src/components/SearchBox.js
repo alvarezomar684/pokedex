@@ -34,7 +34,7 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
                 </select> : null }
                 
                 { !useFilter ? <input className="choose-quantity form-control" placeholder="Cantidad de Pokemones" type="number" value={many} onChange={ e => setMany(e.target.value) } /> : null }
-                {/* { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search" ></button> : null }                 */}
+                
             </div>
             <div className="mt-5 row" >
                     { useFilter ? <button onClick={()=>{onSearchName(searchName)}} className="btn-search col-6" style={{margin:"0 auto"}} ></button> : null }

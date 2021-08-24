@@ -7,6 +7,8 @@ export const RenderPokemon = ({ url, quantity }) => {
     const [types, setTypes] = useState([])
     const [status, setStatus] = useState([])
     const { path } = useRouteMatch()
+    const [oneStyle,setOneStyle] = useState("")
+    const [oneStyleT,setOneStyleT] = useState("")
 
     useEffect(() => {
         if (url && quantity) {
@@ -43,12 +45,25 @@ export const RenderPokemon = ({ url, quantity }) => {
     const listTypes = types.map(e => (<h4 key={e.type.url} className="text-capitalize text-white " >{e.type.name}</h4>))
     const listStatus = status.map(e => (<h4 key={e.stat.url} className="status text-capitalize" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}  > {e.stat.name}: <span> {e.base_stat} </span> </h4>))
 
+    const quantityNumber =  parseInt(quantity,10)
+    
+    useEffect(() => {
+        if (quantityNumber <= 4) {
+            setOneStyle("0 auto")
+            setOneStyleT("3rem")
+        } else {
+            setOneStyle("")
+            setOneStyleT("")
+        }
+    }, [quantityNumber])
+    
+
     if (!pokemon) {
         return null
     }
 
     return (
-        <div className=" col-12 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" >
+        <div className=" col-12 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" style={{margin:oneStyle, marginBottom:oneStyleT}} >
             <h4 className="text-uppercase text-center" style={{color:"#DC3646", fontWeight:"bolder"}} >{pokemon.name}</h4>
             <Link to={`${path}/${pokemon.id}`} >
                 <div className="d-flex justify-content-center">
