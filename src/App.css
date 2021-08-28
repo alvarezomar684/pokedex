@@ -52,3 +52,12 @@ body {
 .card-more-info {
   background: linear-gradient(to bottom, #3c9a2c, #3eb1b5); 
 }
+
+
+@media (max-width: 330px){
+
+  .btn-search {   
+    background-position: 28px;    
+  }
+} 
+

@@ -19,8 +19,8 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
 
     return (
         <div className="row d-flex flex-column justify-content-between" >
-            <div className="col-2 col-lg-6 d-flex flex-column justify-content-between flex-lg-row " style={{margin:"0 auto"}} >
-                <select className="form-control" onChange={ e => setFilter(e.target.value)} >
+            <div className="col-10 col-lg-6 d-flex flex-column justify-content-between flex-lg-row" style={{margin:"0 auto"}} >
+                <select className="form-control select-search mb-3 " onChange={ e => setFilter(e.target.value)} >
                     <option>Change Search</option>
                     <option>By Name</option>             
                     <option>By Type</option>
@@ -28,7 +28,7 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
                 
                 { useFilter ? <input className="form-control"  value={searchName} onChange={ e => setSearchName(e.target.value)} placeholder="Pokemon Name" /> : null}             
 
-                { !useFilter ? <select className="form-control" onChange={ e => setSearchtype(e.target.value)}>
+                { !useFilter ? <select className="form-control mb-3 " onChange={ e => setSearchtype(e.target.value)}>
                     <option value="" >select type pokemon</option>
                     {listAllType}
                 </select> : null }
@@ -39,7 +39,7 @@ export const SearchBox = ({onSearchName,onSearchType,allType}) => {
             <div className="mt-5 row" >
                     { useFilter ? <button onClick={()=>{onSearchName(searchName)}} className="btn-search col-6" style={{margin:"0 auto"}} ></button> : null }
                 </div>
-            <div className="mt-5 row" >
+            <div className=" mb-5 mt-lg-5 row" >
                 { !useFilter ? <button onClick={()=>{onSearchType(searchType,many)}} className="btn-search col-6" style={{margin:"0 auto"}} ></button> : null }    
             </div>
              

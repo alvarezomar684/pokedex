@@ -77,9 +77,8 @@ export const Pokedex = () => {
     }, [type, name])    
 
     return (
-        <div className="App">
-            <header className="App-header">
-                
+        <div>
+            <header>                
                 <Switch>
                     <Route path={`${path}/:id`} >
                         <MoreInfoPokemon />
@@ -107,5 +106,4 @@ export const Pokedex = () => {
             </header>            
         </div>
     );
-
 }
