@@ -63,7 +63,7 @@ export const RenderPokemon = ({ url, quantity }) => {
     }
 
     return (
-        <div className=" col-12 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" style={{margin:oneStyle, marginBottom:oneStyleT}} >
+        <div className=" col-10 col-sm-3  col-md-1  col-lg-1  col-xl-2  render-type" style={{margin:oneStyle, marginBottom:oneStyleT}} >
             <h4 className="text-uppercase text-center" style={{color:"#DC3646", fontWeight:"bolder"}} >{pokemon.name}</h4>
             <Link to={`${path}/${pokemon.id}`} >
                 <div className="d-flex justify-content-center">

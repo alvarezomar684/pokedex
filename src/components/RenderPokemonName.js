@@ -51,7 +51,7 @@ export const RenderPokemonName = ({name}) => {
     }
     
     return (      
-        <div className="col-md-3 offset-4 render-type" >
+        <div className="col-md-3  offset-lg-4 render-type" >
             <h4 className="text-uppercase text-center" style={{color:"#DC3646", fontWeight:"bolder"}} >{pokemonName.name}</h4>
             <Link to={`${path}/${pokemonName.id}`} >
               <div className="d-flex justify-content-center" >
