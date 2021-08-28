@@ -54,10 +54,10 @@ body {
 }
 
 
-@media (max-width: 330px){
+@media (max-width: 400px){
 
   .btn-search {   
-    background-position: 28px;    
+    background-position: 0px;    
   }
 } 
 
