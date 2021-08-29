@@ -1,15 +1,17 @@
+
 import {HashRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 import './App.css';
 import { Pokedex } from "./Pokedex";
 
+
+
 function App() {
-  
 
   return (
     <Router>
       <div className="container-fluid">
         <div >
-          <Switch>
+          <Switch>            
             <Route path="/pokedex" >
               <Pokedex/>
             </Route>

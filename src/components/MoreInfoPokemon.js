@@ -105,7 +105,7 @@ export const MoreInfoPokemon = () => {
                     <Encounters />
                 </Route>
                 <Route path={path} >
-                    <div className="d-flex flex-row justify-content-between jumbotron card-more-info" style={{marginTop:"7rem"}} >
+                    <div className="d-flex  flex-column flex-lg-row justify-content-between jumbotron card-more-info" style={{marginTop:"7rem"}} >
                         <div>
                             <h4 className="text-uppercase display-4" style={{color:"#DC3646"}} >{pokemonMore.name}</h4>
                             <h4 className="display-4 text-white" ># {pokemonMore.order}</h4>
@@ -141,8 +141,8 @@ export const MoreInfoPokemon = () => {
 
                     </div>
 
-                    <div className="d-flex flex-row justify-content-around mt-5" >
-                        {useFilter ? <div className="jumbotron card-more-info col-3" >
+                    <div className="d-flex flex-column flex-lg-row justify-content-around mt-5" >
+                        {useFilter ? <div className="jumbotron card-more-info col-12 col-lg-3" >
                             <h4 style={{ color: "#DC3646" }} className="text-uppercase" >
                                 Height
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
@@ -152,7 +152,7 @@ export const MoreInfoPokemon = () => {
                             <hr />
                             {useFilter ? <h4 className="info-moreInfo">{pokemonMore.height}</h4> : null}
                         </div> : null}
-                        {useFilter ? <div className="jumbotron card-more-info col-3" >
+                        {useFilter ? <div className="jumbotron card-more-info col-12 col-lg-3" >
                             <h4 style={{ color: "#DC3646" }} className="text-uppercase" >
                                 Weight
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-left-right" viewBox="0 0 16 16">
@@ -162,7 +162,7 @@ export const MoreInfoPokemon = () => {
                             <hr />
                             {useFilter ? <h4 className="info-moreInfo" >{pokemonMore.weight}</h4> : null}
                         </div> : null}
-                        {useFilter ? <div className="jumbotron card-more-info col-3" >
+                        {useFilter ? <div className="jumbotron card-more-info col-12 col-lg-3" >
                             <h4 style={{ color: "#DC3646" }} className="text-uppercase" >
                                 Skill
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-stars" viewBox="0 0 16 16">
@@ -174,7 +174,7 @@ export const MoreInfoPokemon = () => {
                         </div> : null}
                     </div>
 
-                    {!useFilter ? <div className="jumbotron card-more-info d-flex flex-row flex-wrap justify-content-between" >
+                    {!useFilter ? <div className="jumbotron card-more-info d-flex flex-column flex-lg-row flex-wrap justify-content-between" >
                         {!useFilter ? listMoves : null}
                     </div> : null}
                 </Route>

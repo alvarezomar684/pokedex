@@ -73,13 +73,13 @@ export const Encounters = () => {
 
     return (
         <>
-            <h4 className="text-uppercase display-3 text-center" style={{ marginTop:"7rem", color: "#DC3646", textShadow: "7px 10px 5px #DC3646", fontWeight: "bolder" }} >{pokemonMore.name}</h4>
+            <h4 className="text-uppercase display-4 display-lg-3 text-center" style={{ marginTop:"7rem", color: "#DC3646", textShadow: "7px 10px 5px #DC3646", fontWeight: "bolder" }} >{pokemonMore.name}</h4>
             <img src={pokemonMore.sprites.other["official-artwork"].front_default} alt={pokemonMore.name} className="img-fluid rounded mx-auto d-block mt-3 " />
             <div className="col-12">
-                <h4 className="display-3 text-uppercase " style={{ color: "#DC3646", textShadow: "5px 7px 5px #DC3646", fontWeight: "bolder" }} >location</h4>
+                <h4 className=" display-4 display-lg-3  text-uppercase " style={{ color: "#DC3646", textShadow: "5px 7px 5px #DC3646", fontWeight: "bolder" }} >location</h4>
             </div>
-            <div className="jumbotron card-more-info d-flex flex-row flex-wrap justify-content-between" >
-                {locationStatus ? listLocations : <h4 className="text-white display-4 " >No Existe Region De Localizacion </h4>}
+            <div className="jumbotron card-more-info d-flex flex-column flex-lg-row flex-wrap justify-content-between" >
+                {locationStatus ? listLocations : <h4 className="text-white display-5 display-lg-4 " >No Existe Region De Localizacion </h4>}
                 <Link to={`pokedex/${params.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-arrow-left arrow align-middle" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />

@@ -76,6 +76,8 @@ export const Pokedex = () => {
 
     }, [type, name])    
 
+    console.log(path)
+
     return (
         <div>
             <header>                
